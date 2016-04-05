@@ -61,7 +61,7 @@ def auth(request):
 
     import requests
 
-    aad_meta_request = requests.get('https://login.microsoftonline.com/leddesignproauth.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=' + id_dict['acr'])
+    aad_meta_request = requests.get('https://login.microsoftonline.com/troubleshootb2c2.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=' + id_dict['acr'])
 
     token_request = requests.post(aad_meta_request.json()['token_endpoint'], data={
         'grant_type': 'authorization_code',
