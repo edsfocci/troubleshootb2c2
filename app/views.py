@@ -49,4 +49,6 @@ def about(request):
     )
 
 def auth(request):
+    from django.shortcuts import redirect
+
     return redirect('/')
