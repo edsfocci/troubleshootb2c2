@@ -59,6 +59,8 @@ def auth(request):
 
     id_dict = jwt.decode(request.GET['id_token'], verify=False)
 
+    import requests
+
     aad_meta_request = requests.get('https://login.microsoftonline.com/leddesignproauth.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=' + id_dict['acr'])
 
     token_request = requests.post(aad_meta_request.json()['token_endpoint'], data={
@@ -81,7 +83,7 @@ def auth(request):
         user_request = requests.get(ALGLO_USERS_ENDPOINT + id_dict['oid'] + '/')
 
         if user_request.status_code != 200:
-            user_request = requests.post(constants.ALGLO_USERS_ENDPOINT, data={
+            user_request = requests.post(ALGLO_USERS_ENDPOINT, data={
                 'aad_id': id_dict['oid'],
                 'email': id_dict['emails'][0],
             })
