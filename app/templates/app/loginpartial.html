@@ -11,7 +11,8 @@
 {% else %}
 
 <ul class="nav navbar-nav navbar-right">
-    <li><a href="{% url 'login' %}">Log in</a></li>
+    <!-- <li><a href="{% url 'login' %}">Log in</a></li> -->
+    <li><a href="https://login.microsoftonline.com/troubleshootb2c2.onmicrosoft.com/oauth2/v2.0/authorize?client_id=7b1a7b46-25d4-4379-8426-00a40795e06b&response_type=code+id_token&redirect_uri=https%3A%2F%2Ftroubleshootb2c2.azurewebsites.net%2F&response_mode=query&scope=openid%20offline_access&nonce=12345&p=B2C_1_sign_up_or_sign_in">Log in</a></li>
 </ul>
 
 {% endif %}
