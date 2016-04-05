@@ -47,3 +47,6 @@ def about(request):
             'year':datetime.now().year,
         })
     )
+
+def auth(request):
+    return redirect('/')
